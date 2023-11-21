@@ -18,5 +18,7 @@
         board.push(innerArray);
     };
 
-    for (let i = 1; i <= board.length; i++) alert(`Row ${i}: [ ${board[i - 1].map(a => a.answer || '◾').join(' ')} ]`);
+    let answers = 'NYTIMES CROSSWORD MINI | ANSWERS\n';
+    for (let i = 1; i <= board.length; i++) answers += `    Row ${i}: [ ${board[i - 1].map(a => a.answer || '◾').join(' ')} ]\n`;
+    alert(answers);
 })();
