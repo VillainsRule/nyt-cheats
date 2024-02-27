@@ -1,12 +1,24 @@
-(() => {
-    if (!location.href.includes('nytimes.com/games/connections')) return alert('Please visit the New York Times game Connections to run this script.');
-    if (!confirm('Are you sure you want to see today\'s answers? There is no going back!'));
+(async () => {
+    if (!location.href.includes('nytimes.com/games/connections')) return alert('Please visit the New York Times game Wordle to run this script.');
+    if (!confirm('Are you sure you want to see today\'s answer? There is no going back!'));
+
+    let levelColors = {
+        0: 'Yellow',
+        1: 'Green',
+        2: 'Blue',
+        3: 'Purple'
+    };
+
+    let date = new Date(Date.now()).toLocaleString('en-US', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        timeZone: 'America/New_York'
+    }).replace(/(\d+)\/(\d+)\/(\d+)/, '$3-$1-$2');
     
-    let dayDifference = Math.floor((Date.now() - new Date('June 12, 2023')) / (1000 * 3600 * 24));
-    let data = gameData[dayDifference].groups;
-    let sortedData = Object.fromEntries(Object.entries(data).sort((a, b) => a[1].level - b[1].level));
-  
-    Object.entries(sortedData).forEach(group => {
-        alert(`${group[1].level === 0 ? 'Yellow' : group[1].level === 1 ? 'Green' : group[1].level === 2 ? 'Blue' : 'Purple'} Category\n    Name: ${group[0]}\n    Words: ${group[1].members.join(', ')}`);
+    let answers = await fetch(`/svc/connections/v2/${date}.json`);
+    answers = await answers.json();
+    answers.categories.forEach((category, index) => {
+        alert(`${levelColors[index]} Category\n    Name: ${category.title}\n    Cards: ${category.cards.map(c => c.content).join(', ')}`);
     });
 })();
