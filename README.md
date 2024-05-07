@@ -6,14 +6,21 @@
     <h2>Supported Puzzles</h2>
 </div>
 
+- **[NEW]** [Strands](https://www.nytimes.com/games/strands)
+    - [Daily Answers](./strandse/script.js)
+
 - [Wordle](https://www.nytimes.com/games/wordle)
-    - [Daily Answer](./wordle/script.js)
+    - [Clear Board](./wordle/clearBoard.js)
+    - [Complete Puzzle](./wordle/completePuzzle.js)
+    - [Edit Stats](./wordle/editStats.js)
+    - [Reveal Answer](./wordle/revealAnswer.js)
 - [Connections](https://www.nytimes.com/games/connections)
-    - [Daily Categories](./connections/script.js)
+    - [See Answers](./connections/seeAnswers.js)
+    - [Solve Puzzle](./connections/solvePuzzle.js)
 - [Spelling Bee](https://www.nytimes.com/puzzles/spelling-bee)
-    - [Daily Words](./spelling-bee/script.js)
+    - [View Answers](./spelling-bee/script.js)
 - [Crossword Mini](https://www.nytimes.com/crosswords/game/mini)
-    - [Daily Words](./mini/script.js)
+    - [View Answers](./mini/script.js)
 
 <br>
-<h5 align="center">made with ❤️ by <b>VillainsRule</b></h5>
+<h5 align="center">made with ❤️ by <b>xthonk</b></h5>
