@@ -15,7 +15,7 @@
         day: '2-digit',
         timeZone: 'America/New_York'
     }).replace(/(\d+)\/(\d+)\/(\d+)/, '$3-$1-$2');
-    
+
     let answers = await fetch(`/svc/connections/v2/${date}.json`);
     answers = await answers.json();
     answers.categories.forEach((category, index) => {
