@@ -24,7 +24,7 @@
 - [Crossword Mini](https://www.nytimes.com/crosswords/game/mini)
     - [View Answers](./mini/answers.js)
 
-- [Letter Box](https://www.nytimes.com/puzzles/letter-boxed)
+- [Letter Boxed](https://www.nytimes.com/puzzles/letter-boxed)
     - [View Official Solution](./letter-boxed/answers.js)
 
 - [Sudoku](https://www.nytimes.com/puzzles/sudoku)
