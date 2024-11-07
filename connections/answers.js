@@ -1,12 +1,11 @@
 (async () => {
     if (!location.href.includes('nytimes.com/games/connections')) return alert('Please visit the New York Times game Wordle to run this script.');
-    if (!confirm('Are you sure you want to see today\'s answer? There is no going back!'));
 
     let levelColors = {
-        0: 'Yellow',
-        1: 'Green',
-        2: 'Blue',
-        3: 'Purple'
+        0: 'yellow',
+        1: 'green',
+        2: 'blue',
+        3: 'purple'
     };
 
     let date = new Date(Date.now()).toLocaleString('en-US', {
@@ -19,6 +18,6 @@
     let answers = await fetch(`/svc/connections/v2/${date}.json`);
     answers = await answers.json();
     answers.categories.forEach((category, index) => {
-        alert(`${levelColors[index]} Category\n    Name: ${category.title}\n    Cards: ${category.cards.map(c => c.content).join(', ')}`);
+        alert(`${levelColors[index]} category\n    name: ${category.title}\n    words: ${category.cards.map(c => c.content).join(', ')}`);
     });
 })();

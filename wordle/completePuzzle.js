@@ -1,6 +1,6 @@
 (async () => {
     const type = (key, autoUppercase) => {
-        const element = document.querySelector('.Board-module_boardContainer__TBHNL');
+        const element = document.querySelector('[class*="Board-module_boardContainer"');
 
         const event = new KeyboardEvent('keydown', {
             key: autoUppercase ? key.toUpperCase() : key,

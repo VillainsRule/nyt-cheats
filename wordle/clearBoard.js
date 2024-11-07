@@ -1,11 +1,11 @@
 (() => {
-    let parsed = JSON.parse(localStorage['nyt-wordle-moogle/ANON']);
+    let parsed = JSON.parse(localStorage['games-state-wordleV2/ANON']);
+    let today = parsed[parsed.length - 1];
 
-    parsed.game.boardState = new Array(6).fill('');
-    parsed.game.currentRowIndex = 0;
-    parsed.game.status = 'IN_PROGRESS';
-    parsed.stats.hasPlayed = false;
+    parsed.states[today].data.boardState = new Array(6).fill('');
+    parsed.states[today].data.game.currentRowIndex = 0;
+    parsed.states[today].data.game.status = 'IN_PROGRESS';
 
-    localStorage['nyt-wordle-moogle/ANON'] = JSON.stringify(parsed);
+    localStorage['games-state-wordleV2/ANON'] = JSON.stringify(parsed);
     location.reload();
 })();

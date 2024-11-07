@@ -8,5 +8,6 @@
 
     let answer = await fetch(`/svc/wordle/v2/${date}.json`);
     answer = await answer.json();
-    alert(`NYTIMES WORDLE | ANSWER\n    Answer: ${answer.solution}\n\nenjoy :D`);
+
+    alert(`today's answer is "${answer.solution}"...enjoy :D`);
 })();

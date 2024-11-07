@@ -13,7 +13,7 @@
         board.push(innerArray);
     };
 
-    let answers = 'NYTIMES CROSSWORD MINI | ANSWERS\n';
-    for (let row = 1; row <= board.length; row++) answers += `    Row ${row}: [ ${board[row - 1].map(a => a.answer || '◾').join(' ')} ]\n`;
+    let answers = 'today\'s mini answers!\n';
+    for (let row = 1; row <= board.length; row++) answers += `    row ${row}: [ ${board[row - 1].map(a => a.answer || '◾').join(' ')} ]\n`;
     alert(answers);
 })();
